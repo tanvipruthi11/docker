@@ -1,0 +1,18 @@
+version: "3"
+services:
+    app:
+      build: ./Assignment1/Container1
+      volumes:
+        - ./Assignment1/Container1:/usr/src/app/Assignment1/Container1
+      image: tanvipruthi11/c1
+      ports:
+        - "5000:5000"
+
+    app1:
+      build: ./Assignment1/Container2
+      image: tanvipruthi11/c2
+      volumes:
+        - ./Assignment1/Container2:/usr/src/app/Assignment1/Container2
+        - ./dictionary.txt:/usr/src/app/Assignment1/Container2/dictionary.txt
+      ports:
+        - "5001:5000"
